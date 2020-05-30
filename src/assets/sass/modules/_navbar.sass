@@ -1,0 +1,39 @@
+nav
+	position: fixed
+	z-index: 500
+	top: 0
+	left: 0
+	right: 0
+
+	background-color: $GREEN
+	height: 4.5rem
+
+	.content
+		align-items: center
+		justify-content: space-between
+
+		.title
+			font-size: 1.5rem
+			color: $WHITE
+
+			.logo
+				margin-right: .3rem
+			a
+				color: $WHITE
+				display: inline-block
+				font-family: 'Mukta'
+				span
+					font-family: 'Mukta ExtraBold'
+
+		.links
+			a, span
+				color: lighten($GRAY,15)
+				font-family: 'Mukta Bold'
+				margin-left: 2rem
+
+				span
+					font-size: .8rem
+					margin-left: .3rem
+
+			.router-link-active
+				color: $WHITE

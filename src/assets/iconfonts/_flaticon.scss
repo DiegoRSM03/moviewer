@@ -1,0 +1,70 @@
+    /*
+    Flaticon icon font: Flaticon
+    Creation date: 29/05/2020 17:23
+    */
+
+    @font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff2") format("woff2"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+    .fi:before{
+        display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    }
+
+    .flaticon-play:before { content: "\f100"; }
+.flaticon-film-reel:before { content: "\f101"; }
+.flaticon-hd-sign:before { content: "\f102"; }
+.flaticon-clapperboard:before { content: "\f103"; }
+.flaticon-director-chair-frontal-view:before { content: "\f104"; }
+.flaticon-popcorn-box:before { content: "\f105"; }
+.flaticon-multiple-users-silhouette:before { content: "\f106"; }
+.flaticon-person:before { content: "\f107"; }
+.flaticon-right-arrow:before { content: "\f108"; }
+.flaticon-left-arrow:before { content: "\f109"; }
+.flaticon-star:before { content: "\f10a"; }
+.flaticon-down-arrow:before { content: "\f10b"; }
+.flaticon-down-arrow-1:before { content: "\f10c"; }
+.flaticon-visibility:before { content: "\f10d"; }
+.flaticon-heart:before { content: "\f10e"; }
+    
+    $font-Flaticon-play: "\f100";
+    $font-Flaticon-film-reel: "\f101";
+    $font-Flaticon-hd-sign: "\f102";
+    $font-Flaticon-clapperboard: "\f103";
+    $font-Flaticon-director-chair-frontal-view: "\f104";
+    $font-Flaticon-popcorn-box: "\f105";
+    $font-Flaticon-multiple-users-silhouette: "\f106";
+    $font-Flaticon-person: "\f107";
+    $font-Flaticon-right-arrow: "\f108";
+    $font-Flaticon-left-arrow: "\f109";
+    $font-Flaticon-star: "\f10a";
+    $font-Flaticon-down-arrow: "\f10b";
+    $font-Flaticon-down-arrow-1: "\f10c";
+    $font-Flaticon-visibility: "\f10d";
+    $font-Flaticon-heart: "\f10e";

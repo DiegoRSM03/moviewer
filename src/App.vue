@@ -1,32 +1,42 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+<div id="app">
+	<nav class="container">
+		<div class="content">
+			<div class="title">
+				<span class="flaticon-film-reel logo"></span>
+				<a href="/"><span>MoVie</span>Wer</a>
+			</div>
+			<div class="links">
+				<span>Categories<span class="flaticon-down-arrow"></span></span>
+				<router-link to="/">Home</router-link>
+				<router-link to="/movies">Movies</router-link>
+				<router-link to="/series">Series</router-link>
+			</div>
+		</div>
+	</nav>
+	<router-view/>
+</div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<style lang="sass">
 
-#nav {
-  padding: 30px;
+@import './assets/sass/styles.sass'
+@import './assets/iconfonts/flaticon.css'
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+@font-face
+	font-family: 'Mukta'
+	src: url('./assets/fonts/Mukta-Regular.ttf')
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+@font-face
+	font-family: 'Mukta Light'
+	src: url('./assets/fonts/Mukta-Light.ttf')
+
+@font-face
+	font-family: 'Mukta Bold'
+	src: url('./assets/fonts/Mukta-Bold.ttf')
+
+@font-face
+	font-family: 'Mukta ExtraBold'
+	src: url('./assets/fonts/Mukta-ExtraBold.ttf')
+
 </style>
