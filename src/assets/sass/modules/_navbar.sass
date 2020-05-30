@@ -6,6 +6,7 @@ nav
 	right: 0
 
 	background-color: $GREEN
+	box-shadow: 0 0 2rem .1rem rgba(34, 34, 34, .3)
 	height: 4.5rem
 
 	.content
@@ -28,12 +29,17 @@ nav
 		.links
 			a, span
 				color: lighten($GRAY,15)
-				font-family: 'Mukta Bold'
+				font-family: 'Mukta'
 				margin-left: 2rem
+				transition: .2s ease 0s
+				cursor: pointer
 
 				span
 					font-size: .8rem
 					margin-left: .3rem
+
+				&:hover
+					color: lighten($GRAY, 30)
 
 			.router-link-active
 				color: $WHITE

@@ -1,0 +1,157 @@
+#movies-or-series
+	margin-bottom: 10rem
+
+	.content
+		flex-direction: column
+		align-items: center
+
+		.header-section
+			width: 100%
+			height: 3rem
+			display: flex
+			align-items: center
+			justify-content: space-between
+			margin-bottom: 3rem
+
+			.title
+				color: $WHITE
+				font-family: 'Mukta ExtraBold'
+				font-size: 2rem
+				text-transform: capitalize
+
+			.options-movies
+				background-color: $GREEN
+			
+			.options-series
+				background-color: $TURQUOISE
+
+			[class^=options]
+				display: flex
+				align-items: center
+				height: 100%
+				border-radius: 5px
+
+				button
+					color: $WHITE
+					background-color: rgba(0, 0, 0, 0)
+					font-family: 'Mukta Bold'
+					
+					cursor: pointer
+					border: none
+					padding: 0 2rem
+
+					height: 100%
+					transition: .2s ease-out 0s
+
+					&:hover
+						background-color: rgba(0, 0, 0, .2)
+
+				.line
+					width: 2px
+					height: 70%
+					background-color: rgba(0, 0, 0, .2)
+
+		[class^=section]
+			display: flex
+			align-items: center
+			justify-content: space-between
+			flex-wrap: wrap
+			width: 100%
+
+			.serie
+				position: relative
+				z-index: 2
+
+				&:after
+					content: ""
+					position: absolute
+					z-index: 1
+					top: 1rem
+					left: 1rem
+					width: 100%
+					height: 95%
+					background-color: $TURQUOISE_DARK
+					
+
+			.movie-or-serie
+				width: 17%
+				margin-bottom: 4rem
+
+				img
+					cursor: pointer
+					width: 100%
+					height: 22rem
+					border-radius: 10px
+					object-fit: cover
+
+				.without-img
+					display: flex
+					flex-direction: column
+					align-items: center
+					justify-content: center
+
+					width: 100%
+					height: 22rem
+					padding: 0 1rem
+					border-radius: 10px
+					background-color: $GRAY
+					cursor: pointer
+
+					span
+						color: $WHITE
+						font-size: 3rem
+						margin-bottom: 2rem
+
+					p
+						color: $WHITE
+						font-family: 'Mukta Bold'
+						font-size: 1.5rem
+						text-align: center
+						line-height: 2rem
+
+				.info
+					margin-top: .5rem
+					font-family: 'Mukta'
+
+					.year-movies
+						background-color: $GREEN_DARK
+
+					.year-series
+						background-color: $TURQUOISE_DARK
+
+					[class^=year]
+						color: $WHITE
+						font-family: 'Mukta Bold'
+						padding: .1rem .5rem
+						border-radius: 5px
+
+					[class^=title]
+						color: $WHITE
+						margin-left: .3rem
+
+		[class^=pagination]
+			display: flex
+			align-items: center
+			justify-content: space-between
+
+			width: 30%
+
+			button
+				cursor: pointer
+				background-color: $PURPLE
+				padding: .7rem 1rem
+				border: none
+				border-radius: 5px
+
+				span
+					color: $WHITE
+					font-size: 1.5rem
+
+			.pages
+				color: $WHITE
+				font-family: 'Mukta ExtraBold'
+				font-size: 1.7rem
+
+
+
+
