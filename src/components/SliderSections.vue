@@ -5,6 +5,7 @@
 			<div class="transparent">
 				<div class="content">
 					<div class="info">
+
 						<div class="rate-year">
 							<span class="rate"><span class="flaticon-star"></span>{{ moviesOrSeries[item-1].vote_average }} / 10</span>
 
@@ -13,14 +14,21 @@
 
 							<span class="views"><span class="flaticon-visibility"></span>{{ moviesOrSeries[item-1].popularity }}</span>
 						</div>
+
 						<div class="lore">
 							<h1 v-if="moviesOrSeries[item-1].title != null">{{ moviesOrSeries[item-1].title }}</h1>
 							<h1 v-else>{{ moviesOrSeries[item-1].name }}</h1>
 
 							<p>{{ moviesOrSeries[item-1].overview.substring(0, 300) }}...</p>
 						</div>
-						<a v-if="moviesOrSeries[item-1].title != null" :href="'/movie/' + moviesOrSeries[item-1].id"><span class="flaticon-clapperboard"></span>WATCH THE MOVIE</a>
-						<a v-else :href="'/serie/' + moviesOrSeries[item-1].id"><span class="flaticon-clapperboard"></span>WATCH THE SERIE</a>
+
+						<div class="button-watch">
+							<div class="buttons-watch">
+								<span><span class="flaticon-clapperboard"></span>WATCH THE MOVIE</span>
+								<a :href="`/${section}/${moviesOrSeries[item-1].id}`" ><span class="flaticon-popcorn-box"></span> WATCH !</a>
+							</div>
+						</div>
+
 					</div>
 					<div class="slider-buttons">
 						<span @click="sliderButton('prev')" v-if="item-1 != 0" class="flaticon-left-arrow"></span>
@@ -81,7 +89,7 @@ export default {
 				break
 			case 'movies':
 				axios
-					.get(this.URL_DB + 'movie/upcoming' + this.API_KEY)
+					.get(this.URL_DB + 'movie/popular' + this.API_KEY)
 					.then(response => (this.moviesOrSeries = response.data.results))
 				break
 			case 'series':

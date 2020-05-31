@@ -1,9 +1,11 @@
 <template>
 <div id="movies-or-series" class="container">
 	<div class="content">
+
 		<div class="header-section">
 			<div class="title">{{subSection}} {{section}}</div>
 			<div :class="'options-'+section">
+
 				<template v-if="section === 'movies'">
 					<button @click="changeSubSection('Now Playing')">Now Playing</button>
 					<div class="line"></div>
@@ -11,6 +13,7 @@
 					<div class="line"></div>
 					<button @click="changeSubSection('Upcoming')">Upcoming</button>
 				</template>
+
 				<template v-else>
 					<button @click="changeSubSection('Airing Today')">Airing Today</button>
 					<div class="line"></div>
@@ -18,10 +21,19 @@
 					<div class="line"></div>
 					<button @click="changeSubSection('Top Rated')">Top Rated</button>
 				</template>
+				
 			</div>
 		</div>
+
 		<div :class="'section-'+section">
-			<div class="movie-or-serie" :class="section" v-for="item in moviesOrSeries" :key="item.id">
+			<div 
+			@mouseover="hoverMovieOrSerie(section.substring(0, section.length) + '-' + item.id)"
+			:id="section.substring(0, section.length) + '-' + item.id"
+			:class="section"
+			:key="item.id"
+			v-for="item in moviesOrSeries" 
+			class="movie-or-serie">
+			
 				<img v-if="item.poster_path !== null" :src="URL_IMAGES + item.poster_path + API_KEY" alt="">
 				<div v-else class="without-img">
 					<span class="flaticon-clapperboard"></span>
@@ -37,8 +49,10 @@
 						<span :class="'title-' + section">{{ getShortTitle(item.name) }}</span>
 					</template>
 				</div>
+				
 			</div>
 		</div>
+
 		<div :class="'pagination-'+section">
 			<button @click="paginationButton('prev')"><span class="flaticon-left-arrow"></span></button>
 			<div class="pages">
@@ -46,6 +60,7 @@
 			</div>
 			<button @click="paginationButton('next')"><span class="flaticon-right-arrow"></span></button>
 		</div>
+
 	</div>
 </div>
 </template>
@@ -108,7 +123,8 @@ export default {
 					querySubSection += '/top_rated'
 					break
 			}
-
+			
+			this.currentPage = 1
 			axios
 				.get(this.URL_DB + querySubSection + this.API_KEY + `&page=${this.currentPage}`)
 				.then(response => (this.moviesOrSeries = response.data.results))
@@ -133,6 +149,9 @@ export default {
 					this.moviesOrSeries = data.results
 					this.totalPages = data.total_pages
 				})
+		},
+		hoverMovieOrSerie (data) {
+			console.log(data);
 		}
 	},
 	mounted () {
