@@ -1,0 +1,67 @@
+#reviews
+	.content
+		flex-direction: column
+
+		h1
+			color: $BLACK
+			font-family: 'Mukta ExtraBold'
+			font-size: 2rem
+			margin-bottom: 2rem
+
+		h3
+			color: $GRAY
+			font-family: 'Mukta'
+			font-size: 1.3rem
+
+		.reviews-list
+			
+			.review
+				display: flex
+				align-items: flex-start
+				justify-content: center
+				padding: 2.5rem 0
+				position: relative
+
+				&:before
+					content: ''
+					position: absolute
+					z-index: 1
+					left: 50%
+					bottom: 0
+					transform: translateX(-50%)
+
+					width: 90%
+					height: 2px
+					border-radius: 50%
+					background-color: $GRAY
+
+				.img
+					display: flex
+					align-items: center
+					justify-content: center
+
+					width: 5rem
+					height: 5rem
+					background-color: lighten($GRAY, 30)
+					border-radius: 100%
+					margin: .5rem 2rem 0 0
+
+					span
+						color: $BLACK
+						font-size: 2rem
+				
+				.info
+					width: 80%
+
+					h2
+						color: $BLACK
+						font-family: 'Mukta Bold'
+						font-size: 1.5rem
+						line-height: 1.5rem
+						margin-bottom: 1rem
+
+					p
+						color: darken($GRAY, 10)
+						font-family: 'Mukta'
+						font-size: 1rem
+						line-height: 1.4rem

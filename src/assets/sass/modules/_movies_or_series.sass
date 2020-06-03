@@ -57,57 +57,106 @@
 			justify-content: space-between
 			flex-wrap: wrap
 			width: 100%
-
-			.serie
-				position: relative
-				z-index: 2
-
-				&:after
-					content: ""
-					position: absolute
-					z-index: 1
-					top: 1rem
-					left: 1rem
-					width: 100%
-					height: 95%
-					background-color: $TURQUOISE_DARK
-					
-
+			
 			.movie-or-serie
 				width: 17%
 				margin-bottom: 4rem
 
-				img
-					cursor: pointer
+				.poster-movie .poster-container .poster-description
+					background-color: $GREEN
+
+				.poster-serie .poster-container .poster-description
+					background-color: $TURQUOISE
+
+				>[class^=poster]
 					width: 100%
 					height: 22rem
 					border-radius: 10px
-					object-fit: cover
-
-				.without-img
-					display: flex
-					flex-direction: column
-					align-items: center
-					justify-content: center
-
-					width: 100%
-					height: 22rem
-					padding: 0 1rem
-					border-radius: 10px
-					background-color: $GRAY
+					overflow: hidden
 					cursor: pointer
 
-					span
-						color: $WHITE
-						font-size: 3rem
-						margin-bottom: 2rem
+					.poster-container
+						display: flex
+						align-items: center
+						justify-content: center
+						width: calc( 100% * 2 )
+						height: 100%
 
-					p
-						color: $WHITE
-						font-family: 'Mukta Bold'
-						font-size: 1.5rem
-						text-align: center
-						line-height: 2rem
+						&:hover .poster-img
+							margin-left: -100%
+							
+
+						.poster-description
+							display: flex
+							flex-direction: column
+							align-items: center
+							justify-content: center
+
+							width: 50%
+							height: 100%
+							padding: 1rem 1rem
+							position: relative
+							z-index: 1
+
+							.title
+								color: $WHITE
+								font-family: 'Mukta Bold'
+								font-size: 1.3rem
+								margin-bottom: 1rem
+								z-index: 3
+
+								>span
+									margin-right: .5rem
+
+							p
+								color: lighten($GRAY, 30)
+								font-family: 'Mukta'
+								line-height: 1.2
+								z-index: 3
+
+							.transparent
+								position: absolute
+								z-index: 2
+								top: 50%
+								left: 45%
+								transform: translate(-50%, -50%) rotate(-15deg)
+
+								color: rgba(34, 34, 34, .2)
+								font-size: 13rem
+							
+
+						.poster-img
+							width: 50%
+							height: 100%
+							transition: .3s ease-out 0s
+
+							img, .without-img
+								width: 100%
+								height: 100%
+
+							img
+								object-fit: cover
+
+							.without-img
+								display: flex
+								flex-direction: column
+								align-items: center
+								justify-content: center
+
+								padding: 0 1rem
+								background-color: $GRAY
+
+								span
+									color: $WHITE
+									font-size: 3rem
+									margin-bottom: 2rem
+
+								p
+									color: $WHITE
+									font-family: 'Mukta Bold'
+									font-size: 1.5rem
+									text-align: center
+									line-height: 2rem
 
 				.info
 					margin-top: .5rem

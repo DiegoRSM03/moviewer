@@ -1,0 +1,52 @@
+#header-movie-or-serie
+	margin-top: 4.5rem
+	height: 25rem
+
+	background-size: cover
+	background-position: 0 20%
+	background-attachment: fixed
+
+	.transparent
+		display: flex
+		flex-direction: column
+		align-items: center
+
+		height: 100%
+		background-image: linear-gradient(to top, $BLACK, rgba(34, 34, 34, .6))
+
+		.header
+			display: flex
+			align-items: flex-end
+			justify-content: space-between
+
+			h1
+				color: $WHITE
+				font-family: 'Mukta ExtraBold'
+				font-size: 5rem
+				max-width: 50rem
+				line-height: 5rem
+
+			.info
+				background-color: $PURPLE
+				padding: .5rem 2rem
+				border-radius: 5px
+				margin-bottom: 1rem
+
+				>span:nth-child(2)
+					margin: 0 3rem
+
+				>span
+					color: $WHITE
+					font-family: 'Mukta Bold'
+
+					>span
+						margin-right: .3rem
+
+		>p
+			color: $GRAY
+			font-family: 'Mukta'
+			font-size: 1.3rem
+			line-height: 1.8rem
+			width: $WIDTH
+			max-width: $MAX_WIDTH
+			margin-top: 2.5rem

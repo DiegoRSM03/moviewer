@@ -1,0 +1,53 @@
+#details
+	.content
+		flex-direction: column
+
+		>div
+			h1, h2
+				display: block
+				color: $BLACK
+				font-family: 'Mukta ExtraBold'
+				font-size: 2rem
+				line-height: 2rem
+
+		.header
+			display: flex
+			justify-content: space-between
+			align-items: flex-end
+			width: 100%
+
+			span
+				color: $WHITE
+				background-color: $GREEN
+				font-family: 'Mukta Bold'
+				padding: .3rem 2rem
+				border-radius: 5px
+				box-shadow: 0 0 3px 1px rgba(0, 0, 0, .2)
+
+		.tagline
+			color: darken($GRAY, 10)
+			font-family: 'Mukta'
+			margin-bottom: 3rem
+
+		.more-info
+			display: flex
+			align-items: flex-start
+			justify-content: space-between
+			width: 100%
+		
+		.genres,
+		.production-companies,
+		.production-countries,
+		.networks
+			width: 30%
+
+			ul
+				li
+					color: darken($GRAY, 10)
+					font-family: 'Mukta'
+					line-height: 1.5rem
+
+				li:nth-child(1)
+					margin-top: .5rem
+
+		

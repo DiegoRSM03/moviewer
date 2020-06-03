@@ -26,31 +26,13 @@
 		</div>
 
 		<div :class="'section-'+section">
-			<div 
-			@mouseover="hoverMovieOrSerie(section.substring(0, section.length) + '-' + item.id)"
-			:id="section.substring(0, section.length) + '-' + item.id"
-			:class="section"
-			:key="item.id"
-			v-for="item in moviesOrSeries" 
-			class="movie-or-serie">
-			
-				<img v-if="item.poster_path !== null" :src="URL_IMAGES + item.poster_path + API_KEY" alt="">
-				<div v-else class="without-img">
-					<span class="flaticon-clapperboard"></span>
-					<p>Sorry! This movie doesn't have any poster</p>
-				</div>
-				<div class="info">
-					<template v-if="item.title != null">
-						<span :class="'year-' + section">{{ getYear(item.release_date) }}</span>
-						<span :class="'title-' + section">{{ getShortTitle(item.title) }}</span>
-					</template>
-					<template v-else>
-						<span :class="'year-' + section">{{ getYear(item.first_air_date) }}</span>
-						<span :class="'title-' + section">{{ getShortTitle(item.name) }}</span>
-					</template>
-				</div>
-				
-			</div>
+			<Poster
+				:section="section"
+				:info="item"
+
+				v-for="item in moviesOrSeries"
+				:key="item.id">
+			</Poster>
 		</div>
 
 		<div :class="'pagination-'+section">
@@ -68,6 +50,7 @@
 <script>
 import axios from 'axios'
 import { mapState } from 'vuex'
+import Poster from '@/components/Poster.vue'
 
 export default {
 	data() {
@@ -77,6 +60,9 @@ export default {
 			subSection: 'Popular',
 			totalPages: 0
 		}
+	},
+	components: {
+		Poster,
 	},
 	props: {
 		section: String,
@@ -89,16 +75,6 @@ export default {
 		])
 	},
 	methods: {
-		getYear (date) {
-			return date.substring(0, 4)
-		},
-		getShortTitle (title) {
-			if (title.length > 18) {
-				return title.substring(0,18) + '...'
-			} else {
-				return title
-			}
-		},
 		changeSubSection (subSection) {
 			this.subSection = subSection
 			let querySection
@@ -149,9 +125,6 @@ export default {
 					this.moviesOrSeries = data.results
 					this.totalPages = data.total_pages
 				})
-		},
-		hoverMovieOrSerie (data) {
-			console.log(data);
 		}
 	},
 	mounted () {

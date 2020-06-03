@@ -30,6 +30,17 @@ body
 	background-color: $BLACK
 	cursor: default
 
-@import modules/_navbar.sass
-@import modules/sliderSections.sass
-@import modules/moviesOrSeries.sass
+li
+	display: block
+	list-style: none
+
+@import modules/navbar.sass
+@import modules/slider_sections.sass
+@import modules/movies_or_series.sass
+
+@import modules/movie_or_serie/header.sass
+@import modules/movie_or_serie/tab_handler.sass
+@import modules/movie_or_serie/details.sass
+@import modules/movie_or_serie/similars.sass
+@import modules/movie_or_serie/credits.sass
+@import modules/movie_or_serie/reviews.sass

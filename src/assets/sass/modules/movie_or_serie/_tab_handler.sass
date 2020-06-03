@@ -1,0 +1,40 @@
+.tab-handler
+	width: 100%
+	margin-bottom: 4rem
+	padding-top: 5rem
+
+	.tab-container
+		.tab
+			display: flex
+			flex-direction: column
+			align-items: flex-start
+			justify-content: center
+
+			.tabs
+				display: flex
+
+				span
+					color: $BLACK
+					background-color: lighten($GRAY, 20)
+					font-family: 'Mukta Bold'
+					padding: .5rem 1.5rem
+					transition: .3s ease 0s
+					cursor: pointer
+					
+					&:hover
+						background-color: $GRAY
+
+				span:nth-child(1)
+					border-radius: 10px 0 0 0 
+
+				span:nth-child(4)
+					border-radius: 0 10px 0 0
+
+
+			.components
+				width: 100%
+				background-color: $WHITE
+				border-radius: 0 8px 8px 8px
+
+				>div .content
+					padding: 2rem 0 4rem

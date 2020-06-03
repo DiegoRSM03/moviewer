@@ -1,4 +1,5 @@
 <template>
+<transition name="slide-fade">
 <div id="slider-sections">
 	<div class="container">
 		<div class="slider" :style="`background-image: url(${URL_IMAGES}${moviesOrSeries[item-1].backdrop_path});`" v-for="item in 5" :key="item.id">
@@ -24,8 +25,10 @@
 
 						<div class="button-watch">
 							<div class="buttons-watch">
-								<span><span class="flaticon-clapperboard"></span>WATCH THE MOVIE</span>
-								<a :href="`/${section}/${moviesOrSeries[item-1].id}`" ><span class="flaticon-popcorn-box"></span> WATCH !</a>
+								<span v-if="sectionName == 'movie'"><span class="flaticon-clapperboard"></span>WATCH THE MOVIE</span>
+								<span v-else><span class="flaticon-clapperboard"></span>WATCH THE SERIE</span>
+
+								<a :href="`/${sectionName}/${moviesOrSeries[item-1].id}`" ><span class="flaticon-popcorn-box"></span> WATCH !</a>
 							</div>
 						</div>
 
@@ -42,6 +45,7 @@
 		</div>
 	</div>
 </div>
+</transition>
 </template>
 
 <script>
@@ -62,7 +66,14 @@ export default {
 			'URL_DB',
 			'URL_IMAGES',
 			'API_KEY'
-		])
+		]),
+		sectionName () {
+			if (this.section == 'home') {
+				return 'movie'
+			} else {
+				return this.section.substring(0, this.section.length-1)
+			}
+		}
 	},
 	methods: {
 		sliderButton (operation) {
