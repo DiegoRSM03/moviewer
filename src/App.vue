@@ -7,7 +7,6 @@
 				<a href="/home"><span>MoVie</span>Wer</a>
 			</div>
 			<div class="links">
-				<span>Categories<span class="flaticon-down-arrow"></span></span>
 				<router-link to="/home">Home</router-link>
 				<router-link to="/movies">Movies</router-link>
 				<router-link to="/series">Series</router-link>
